@@ -14,7 +14,7 @@ import torch.nn.init as init
 import numpy as np
 import torch
 
-def mixup_data(x, y, alpha=1.0):
+def mixup_data(x, y, alpha=1.0, use_cuda=True):
 
     '''Compute the mixup data. Return mixed inputs, pairs of targets, and lambda'''
     if alpha > 0.:
@@ -22,10 +22,13 @@ def mixup_data(x, y, alpha=1.0):
     else:
         lam = 1.
     batch_size = x.size()[0]
-    index = np.random.permutation(batch_size)
-    x, y = x.numpy(), y.numpy()
-    mixed_x = torch.Tensor(lam * x + (1 - lam) * x[index,:])
-    y_a, y_b = torch.Tensor(y).type(torch.LongTensor), torch.Tensor(y[index]).type(torch.LongTensor)
+    if use_cuda:
+        index = torch.cuda.LongTensor(np.random.permutation(batch_size))
+    else:
+        index = torch.LongTensor(np.random.permutation(batch_size))
+
+    mixed_x = lam * x + (1 - lam) * x[index,:]
+    y_a, y_b = y, y[index]
     return mixed_x, y_a, y_b, lam
 
 def mixup_criterion(y_a, y_b, lam):
