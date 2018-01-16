@@ -16,7 +16,7 @@ The other choices (network architecture, #epochs, learning rate schedule, moment
 By default, the trained model with the best validation accuracy resides in `./checkpoint` folder, and the training log (including training loss/accuracy and validation loss/accuracy for each epoch) is saved in `./results` as a `.csv` file.
 
 ## Results
-_mixup_ reduces overfitting and improves generalization. The following plots show test error curves of a typical training session using the PreAct ResNet-18 architecture (default; you can make changes [here](https://github.com/hongyi-zhang/mixup/blob/8b43d663501b10ccb8e21d88be9d42d3bab0fd2f/easy_mixup.py#L78)). Note that compared with the ERM baseline, _mixup_ prefers a smaller weight decay (1e-4 vs. 5e-4), indicating its regularization effects.
+**_mixup_ reduces overfitting and improves generalization.** The following plots show test error curves of a typical training session using the PreAct ResNet-18 architecture (default; you can make changes [here](https://github.com/hongyi-zhang/mixup/blob/8b43d663501b10ccb8e21d88be9d42d3bab0fd2f/easy_mixup.py#L78)). Note that compared with the ERM baseline, **_mixup_ prefers a smaller weight decay** (1e-4 vs. 5e-4), indicating its regularization effects.
 
 | Model              | weight decay = 1e-4  | weight decay = 5e-4  |
 |:-------------------|---------------------:|---------------------:|
