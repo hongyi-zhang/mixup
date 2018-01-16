@@ -1,12 +1,13 @@
 
-# mixup training of Generative Adversarial Networks (GAN)
+# mixup training of GAN
 
 ## Training
-
+Simply run
 ```
-python example_gan.py```
+python example_gan.py
+```
 
-You need the `tqdm` package to run this script.
+You will need PyTorch and the `tqdm` package to run this script.
 
 ## Results
 
