@@ -1,6 +1,13 @@
 This repo contains a demo reimplementation (since the original code for the paper belongs to Facebook) of the CIFAR-10 training code in PyTorch based on the following paper:
 > Hongyi Zhang, Moustapha Cisse, Yann N. Dauphin and David Lopez-Paz. _mixup: Beyond Empirical Risk Minimization._ https://arxiv.org/abs/1710.09412
 
+## Results
+_mixup_ reduces overfitting and improves generalization. The following plots show test error curves of a typical training session using the PreAct ResNet-18 architecture (default; you can make changes [here](https://github.com/hongyi-zhang/mixup/blob/8b43d663501b10ccb8e21d88be9d42d3bab0fd2f/easy_mixup.py#L78)). Note that compared with the ERM baseline, _mixup_ prefers a smaller weight decay (1e-4 vs. 5e-4), indicating its regularization effects.
+
+![Using 1e-4 as weight decay.]()
+![Using 5e-4 as weight decay.]()
+
+
 ## Training
 ```bash
 # training with default parameters (weight_decay=1e-4 and alpha=1)
