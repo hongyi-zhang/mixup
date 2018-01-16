@@ -8,6 +8,11 @@ from torch.nn.functional import binary_cross_entropy_with_logits as bce
 
 from tqdm import tqdm
 
+import os
+
+if not os.path.exists('./samples'):
+    os.makedirs('./samples')
+
 n_iterations = 20001
 n_latent = 2
 n_layers = 3
