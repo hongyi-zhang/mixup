@@ -14,8 +14,9 @@ The following table shows the median test errors of the last 10 epochs in a 200-
 
 ![](gan/images/gan_results.png)
 
-## Other frameworks
+## Other implementations
  - [A Tensorflow implementation of mixup](https://github.com/ppwwyyxx/tensorpack/tree/master/examples/ResNet#cifar10-preact18-mixuppy) which reproduces our results in [tensorpack](https://github.com/ppwwyyxx/tensorpack)
+ - [Official Facebook implementation of the CIFAR-10 experiments](https://github.com/facebookresearch/mixup-cifar10)
 
 ## Acknowledgement
 The CIFAR-10 reimplementation of _mixup_ is adapted from the [pytorch-cifar](https://github.com/kuangliu/pytorch-cifar) repository by [kuangliu](https://github.com/kuangliu).
